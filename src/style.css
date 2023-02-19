@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 *{
     padding:0;
@@ -10,22 +11,28 @@
 
 :root{
     --matrix-color: rgb(3, 160, 98);
-    --whitish: rgba(250, 245, 245, 0.795);
+    --whitish: #8892b0;
+    --matrix-font: 'VT323', monospace;
+    --monospace-font:  'Space Mono',"Fira Code","Fira Mono","Roboto Mono",monospace;
+
 }
 
 header{
     width: 100%;
-    height: 22vh;
+    height: 16vh;
     background-color: transparent;
     backdrop-filter: blur(10px);
     color:var(--whitish);
     display: grid;
     place-items: center;
+    position: fixed;
+    top:0px;
     /* place-content: center; */
 }
 
 nav{
     display: flex;
+    background-color: transparent;
     justify-content: space-between;
     width:90%;
     height: inherit;
@@ -57,6 +64,78 @@ svg{
     width:90%;
 }
 
+main {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    padding: 170px 280px;
+    border-top: 2px solid var(--matrix-color);
+}
+
+.introduction {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    color:white;
+}
+
+.introduction h2 {
+    color: var(--matrix-color);
+    font-size: 23px;
+    font-family: var(--matrix-font);
+    font-weight: 400;
+    
+}
+
+.introduction .description{
+    margin: 0px;
+    font-size: 4.5rem;
+}
+
+.introduction h1{
+    color: RGB(209,241,222);
+}
+
+.introduction h3{
+    /* margin-top: 15px; */
+    color: var(--whitish);
+    line-height: 0.9;
+}
+
+.introduction p{
+    font-size: 1.2rem;
+    color: var(--whitish);
+    margin-top:5%;
+    margin-bottom:5%;
+    max-width: 600px;
+    display: block;
+}
+
+.div-btn-body{
+    border: 2px solid var(--matrix-color);
+    padding:15px;
+    color: var(--matrix-color);
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    height:4rem;
+}
+
+.div-btn-body:hover{
+    color: var(--whitish);
+    opacity: 0.8;
+}
+
+.name-div{
+    margin-top:1%;
+    margin-bottom: 1.5%;
+}
+
 .menu ol{
     display: flex;
     margin-left: 60%;
@@ -69,11 +148,12 @@ svg{
     font-size: 1.2em;
     cursor: pointer;
     text-decoration: none;
-    color: var(--whitish)
+    color: var(--whitish);
+    background-color: none;
 }
 
 .menu ol li a:hover{
-    color: var(--matrix-color)
+    color: var(--matrix-color);
 }
 
 .menu ol li a::before {
@@ -90,16 +170,17 @@ svg{
 
 .btn-div{
     border: 2px solid var(--matrix-color);
-    padding:0.65%;
+    padding:0.65%; 
     color: var(--matrix-color);
     border-radius: 8px;
     font-size: 1.2em;
     cursor: pointer;
+    background-color: rgb(23, 23, 23);
 }
 
 .btn-div:hover{
-    background-color: #333;
-    opacity: 0.8;
+    color: var(--whitish);
+    opacity: 0.6;
 }
 
 .left-side-bar{
