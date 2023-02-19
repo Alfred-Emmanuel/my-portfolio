@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import './style.css'
+import Header from './Components/Header';
+import LeftSideBar from './Components/leftSideBar';
 
 function App() {
     return ( 
-        <h1>My Portfolio</h1>
+        <div className='container'>
+            <Header />
+            <LeftSideBar />
+        </div>
      );
 }
 
