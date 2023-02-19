@@ -2,10 +2,10 @@ import React, { Component } from "react";
 
 function LeftSideBar() {
   return (
-    <div>
+    <div className="left-side-bar">
       <ul>
         <li>
-          <a>
+          <a href="https://github.com/Alfred-Emmanuel" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               role="img"
@@ -23,7 +23,7 @@ function LeftSideBar() {
           </a>
         </li>
         <li>
-          <a>
+          <a href="https://twitter.com/AlfredEmmanuel_" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               role="img"
@@ -41,7 +41,10 @@ function LeftSideBar() {
           </a>
         </li>
         <li>
-          <a>
+          <a
+            href="https://www.linkedin.com/in/emmanuel-alfred-72592b13b/"
+            target="_blank"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               role="img"
