@@ -28,6 +28,14 @@ function Body() {
             <a>Check it out</a>
           </div>
         </section>
+
+        <section id="about">
+          <h2 className="about-me">"About Me"</h2>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </section>
       </main>
     </div>
   );
