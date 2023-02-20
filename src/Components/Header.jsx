@@ -30,7 +30,7 @@ function Header() {
         <div className="menu">
           <ol>
             <li>
-              <a>About</a>
+              <a href="/#about">About</a>
             </li>
             <li>
               <a>Work</a>
