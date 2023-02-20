@@ -364,7 +364,7 @@ main {
 #about p{
     margin: 0px 0px 15px;
     font-size: 20px;
-    font-family: var(--matrix-font);
+    /* font-family: var(--matrix-font); */
 }
 
 #about p:last-child, p:last-of-type {
@@ -405,6 +405,7 @@ main {
     width:350px;
     height: 350px;
     position: relative;
+    border-radius: 5px;
 }
 
 .image-wrapper img{
@@ -412,17 +413,20 @@ main {
     height: 100%;
     object-fit: cover;
     transition: .5s ease;
+    border-radius: 5px;
 }
 
 .image-wrapper .overlay {
     position: absolute;
-    opacity: 0.4;
+    opacity: 0.5;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: var(--matrix-color);
     transition: .5s ease;
+    mix-blend-mode: screen;
+    border-radius: 5px;
   }
 
   .image-wrapper:hover .overlay{

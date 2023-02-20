@@ -62,7 +62,7 @@ function Body() {
               </ul>
             </div>
             <div className="image-wrapper">
-              <img src="/logo.jpeg" />
+              <img src="/face.jpg" />
               <div class="overlay"></div>
             </div>
           </div>
