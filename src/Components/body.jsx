@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 
 function Body() {
   return (
@@ -61,7 +61,10 @@ function Body() {
                 <li>Wordpress</li>
               </ul>
             </div>
-            <div></div>
+            <div className="image-wrapper">
+              <img src="/logo.jpeg" />
+              <div class="overlay"></div>
+            </div>
           </div>
         </section>
       </main>

@@ -20,6 +20,21 @@ function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrollPosition]);
+
+  function handleClick(e) {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top;
+      const currentPosition = window.pageYOffset;
+      const offset = targetPosition + currentPosition;
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
+    }
+  }
   return (
     <header className={headerVisible ? "" : "hide"}>
       <nav>
@@ -30,7 +45,9 @@ function Header() {
         <div className="menu">
           <ol>
             <li>
-              <a href="/#about">About</a>
+              <a href="#about" onClick={handleClick}>
+                About
+              </a>
             </li>
             <li>
               <a>Work</a>
