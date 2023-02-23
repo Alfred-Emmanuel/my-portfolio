@@ -63,11 +63,10 @@ function Header() {
       className={`${isScrolling ? "scrolling" : ""} ${
         headerVisible ? "" : "hide"
       }`}
-      // style={{ height: headerHeight }}
     >
       <nav>
-        <div>
-          <img src="/logo.jpeg" />
+        <div className="logo-div">
+          <img src="/mainLogo.png" className="logo" />
         </div>
 
         <div className="menu">
@@ -78,13 +77,19 @@ function Header() {
               </a>
             </li>
             <li>
-              <a>Work</a>
+              <a href="#jobs" onClick={handleClick}>
+                Work
+              </a>
             </li>
             <li>
-              <a>Experience</a>
+              <a href="" onClick={handleClick}>
+                Experience
+              </a>
             </li>
             <li>
-              <a>Contact</a>
+              <a href="" onClick={handleClick}>
+                Contact
+              </a>
             </li>
           </ol>
         </div>

@@ -1,6 +1,12 @@
 import React, { Component, useState, useEffect } from "react";
 
 function Body() {
+  const [activeDiv, setActiveDiv] = useState(1);
+
+  const toggleDiv = divNum => {
+    setActiveDiv(divNum);
+  };
+
   return (
     <div className="main-content">
       <main>
@@ -62,8 +68,129 @@ function Body() {
               </ul>
             </div>
             <div className="image-wrapper">
-              <img src="/face.jpg" />
+              <img src="/face2.jpg" />
               <div class="overlay"></div>
+            </div>
+          </div>
+        </section>
+        <section id="jobs">
+          <h2 className="heading">Places i've worked</h2>
+          <div className="inner">
+            <div className="job-tabs">
+              <button onClick={() => toggleDiv(1)}>
+                <span>Strictly Dev</span>
+              </button>
+              <button onClick={() => toggleDiv(2)}>
+                <span>Strictly Dev</span>
+              </button>
+              <button onClick={() => toggleDiv(3)}>
+                <span>Strictly Dev</span>
+              </button>
+            </div>
+            <div className="outer-job-description-div">
+              <div
+                className="inner-job-description-div"
+                style={{ display: activeDiv === 1 ? "block" : "none" }}
+              >
+                <h3>
+                  <span> FrontEnd Developer </span>
+                  <span className="company">
+                    @{" "}
+                    <a className="inline-link" href="google.com">
+                      Strictly Dev
+                    </a>
+                  </span>
+                </h3>
+                <p className="range"> June 2021 - July 2022</p>
+                <div>
+                  <ul>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Nam nemo provident cumque perferendis quaerat voluptate
+                      tempore sed cupiditate unde minima!
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ullam perferendis quisquam ab est earum, cum voluptatem
+                      nemo excepturi nulla ut, distinctio facere illum fugit
+                      error.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolores error veniam dolore cum, itaque quia?
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                className="inner-job-description-div"
+                style={{ display: activeDiv === 2 ? "block" : "none" }}
+              >
+                <h3>
+                  <span> MiddleEnd Developer </span>
+                  <span className="company">
+                    @{" "}
+                    <a className="inline-link" href="google.com">
+                      Strictly Dev
+                    </a>
+                  </span>
+                </h3>
+                <p className="range"> June 2021 - July 2022</p>
+                <div>
+                  <ul>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Nam nemo provident cumque perferendis quaerat voluptate
+                      tempore sed cupiditate unde minima!
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ullam perferendis quisquam ab est earum, cum voluptatem
+                      nemo excepturi nulla ut, distinctio facere illum fugit
+                      error.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolores error veniam dolore cum, itaque quia?
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                className="inner-job-description-div"
+                style={{ display: activeDiv === 3 ? "block" : "none" }}
+              >
+                <h3>
+                  <span> BackEnd Developer </span>
+                  <span className="company">
+                    @{" "}
+                    <a className="inline-link" href="google.com">
+                      Strictly Dev
+                    </a>
+                  </span>
+                </h3>
+                <p className="range"> June 2021 - July 2022</p>
+                <div>
+                  <ul>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Nam nemo provident cumque perferendis quaerat voluptate
+                      tempore sed cupiditate unde minima!
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ullam perferendis quisquam ab est earum, cum voluptatem
+                      nemo excepturi nulla ut, distinctio facere illum fugit
+                      error.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolores error veniam dolore cum, itaque quia?
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>

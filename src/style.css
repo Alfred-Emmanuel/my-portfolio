@@ -16,6 +16,7 @@
     --monospace-font:  'Space Mono',"Fira Code","Fira Mono","Roboto Mono",monospace;
     --transition: all 0.25s;
     --very-light-navy: #233554;
+    --headers: RGB(209,241,222);
 }
 
 header{
@@ -44,7 +45,7 @@ header{
     place-items: center;
     position: fixed;
     top:0px;
-    box-shadow: 0 10px 30px -10px var(--whitish);
+    box-shadow: 10px 0px 30px -10px var(--whitish);
     z-index: 10;
 }
 
@@ -100,6 +101,18 @@ h1, h2, h3, h4, h5, h6{
     background: none;
 }
 
+.logo-div{
+    background-color: transparent;
+    left: 0;
+    position: absolute;
+}
+
+.logo{
+    background-color: transparent;
+    width: 150px;
+    height: 100px;
+}
+
 .hide {
     opacity: 0;
     transition: opacity 0.5s ease-out;
@@ -107,22 +120,26 @@ h1, h2, h3, h4, h5, h6{
 
 .menu{
     background-color: transparent;
+    position: absolute;
+    left:35%
 }
 
 .menu ol{
     display: flex;
     margin-left: 60%;
+    background-color: transparent;
 }
 
 .menu ol li{
     padding-left: 35%;
+    background-color: transparent;
 }
 .menu ol li a{
     font-size: 1.2em;
     cursor: pointer;
     text-decoration: none;
     color: var(--whitish);
-    background-color: none;
+    background-color: transparent;
 }
 
 .menu ol li a:hover{
@@ -149,6 +166,8 @@ h1, h2, h3, h4, h5, h6{
     font-size: 1.2em;
     cursor: pointer;
     background-color: rgb(23, 23, 23);
+    position: absolute;
+    right:0;
 }
 
 .btn-div:hover{
@@ -253,7 +272,6 @@ h1, h2, h3, h4, h5, h6{
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    color:white;
     height: 80vh;
 }
 
@@ -279,7 +297,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .introduction h1{
-    color: RGB(209,241,222);
+    color: var(--headers)
 }
 
 .introduction h3{
@@ -332,8 +350,6 @@ h1, h2, h3, h4, h5, h6{
 
 #about{
     max-width: 900px;
-    color:white;
-    height: 100vh;
 }
 
 .about-me{
@@ -369,12 +385,13 @@ h1, h2, h3, h4, h5, h6{
 
 #about h2 {
     display: block;
-    font-size: 32px;
+    font-size: 2.5rem;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+    color: var(--headers)
 }
 
 #about .inner{
@@ -386,6 +403,7 @@ h1, h2, h3, h4, h5, h6{
 #about p{
     margin: 0px 0px 15px;
     font-size: 20px;
+    color: var(--whitish)
     /* font-family: var(--matrix-font); */
 }
 
@@ -428,6 +446,7 @@ h1, h2, h3, h4, h5, h6{
     height: 350px;
     position: relative;
     border-radius: 5px;
+    margin-top: 15%;
 }
 
 .image-wrapper img{
@@ -470,3 +489,156 @@ h1, h2, h3, h4, h5, h6{
     transform: translateX(-3px);
     transition: .5s ease;
     }
+
+#jobs{
+    max-width: 700px;
+    color:var(--whitish);
+}
+
+#jobs .heading{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 0px 40px;
+    width: 100%;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    color: var(--headers);
+}
+#jobs .heading:before {
+    position: relative;
+    counter-increment: section 2;
+    content: "0" counter(section) ".";
+    margin-right: 10px;
+    color: var(--matrix-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+#jobs .heading:after{
+    content: "";
+    display: block;
+    position: relative;
+    top: -50%;
+    width: 300px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: var(--very-light-navy);
+}
+
+#jobs .inner{
+    min-height:340px;
+    display: flex;
+}
+
+#jobs .inner .job-tabs{
+    position: relative;
+    z-index: 3;
+    width: max-content;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+#jobs .inner .job-tabs button{
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    position: relative;
+    /* transition: var(--transition); */
+    transition: background-color 0.5s ease, color 0.5s ease;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 42px;
+    padding: 0px 20px 2px;
+    border: none;
+    border-left: 2px solid var(--very-light-navy);
+    background-color: transparent;
+    /* background: none; */
+    color: #8892b0;
+    font-size: 13px;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#jobs .inner .job-tabs button span{
+    background: transparent;
+}
+#jobs .inner .job-tabs button:hover{
+    border-left: 4px solid var(--matrix-color);
+    background-color: rgba(70, 92, 99, 0.5);
+    color:var(--matrix-color)
+}
+
+#jobs .inner .outer-job-description-div{
+    position: relative;
+    width: 100%;
+    margin-left: 20px;
+}
+
+#jobs .inner .inner-job-description-div{
+    width: 100%;
+    height: auto;
+    padding: 10px 5px;
+    transition: height 0.5s ease-out;
+}
+
+.inner-job-description-div h3{
+    margin-bottom: 2px;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.3;   
+}
+
+.inner-job-description-div .range{
+    margin-bottom: 25px;
+    color: var(--whitish);
+    font-size: 13px;
+}
+
+.inner-job-description-div ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    font-size: 18px;
+}
+
+.inner-job-description-div ul li{
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.inner-job-description-div ul li:before{
+    content: "▹";
+    position: absolute;
+    left: 0px;
+    color: var(--matrix-color);
+}
+
+.inner-job-description-div h3 a.inline-link{
+    position: relative;
+    text-decoration: none;
+    color: var(--matrix-color)
+}
+
+.inner-job-description-div h3 .company .inline-link:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--matrix-color);
+        color:var(--matrix-color);
+        transform: scaleX(0);
+        transform-origin: bottom left;
+        transition: transform 0.3s ease-out;
+}
+
+.inner-job-description-div h3 .company .inline-link:hover::after{
+    transform: scaleX(1);
+}
