@@ -12,4 +12,4 @@ React.js
 JSX
 Javascript
 HTML
-CSS
+Vanilla CSS

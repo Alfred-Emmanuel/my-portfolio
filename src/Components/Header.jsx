@@ -3,6 +3,23 @@ import React, { Component, useState, useEffect } from "react";
 function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.pageYOffset > 0) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     function handleScroll() {
@@ -35,8 +52,19 @@ function Header() {
       });
     }
   }
+
+  const show = `${isScrolling ? "scrolling-header" : ""} ${
+    headerVisible ? "" : "hide"
+  } `;
+
+  console.log(show);
   return (
-    <header className={headerVisible ? "" : "hide"}>
+    <header
+      className={`${isScrolling ? "scrolling" : ""} ${
+        headerVisible ? "" : "hide"
+      }`}
+      // style={{ height: headerHeight }}
+    >
       <nav>
         <div>
           <img src="/logo.jpeg" />
