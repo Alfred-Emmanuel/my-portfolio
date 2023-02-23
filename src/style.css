@@ -14,7 +14,7 @@
     --whitish: #8892b0;
     --matrix-font: 'VT323', monospace;
     --monospace-font:  'Space Mono',"Fira Code","Fira Mono","Roboto Mono",monospace;
-    --transition: all 0.25s;
+    --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
     --very-light-navy: #233554;
     --headers: RGB(209,241,222);
 }
@@ -545,8 +545,8 @@ h1, h2, h3, h4, h5, h6{
     text-decoration: none;
     text-decoration-skip-ink: auto;
     position: relative;
-    /* transition: var(--transition); */
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: var(--transition);
+    /* transition: background-color 0.5s ease, color 0.5s ease; */
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -567,7 +567,12 @@ h1, h2, h3, h4, h5, h6{
 #jobs .inner .job-tabs button span{
     background: transparent;
 }
-#jobs .inner .job-tabs button:hover{
+#jobs .inner .job-tabs button:active, #jobs .inner .job-tabs button:hover{
+    background-color: rgba(70, 92, 99, 0.5);
+    color:var(--matrix-color)
+}
+
+#jobs .inner .job-tabs button:focus{
     border-left: 4px solid var(--matrix-color);
     background-color: rgba(70, 92, 99, 0.5);
     color:var(--matrix-color)
