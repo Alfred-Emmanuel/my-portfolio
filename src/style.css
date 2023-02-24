@@ -457,7 +457,7 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 5px;
 }
 
-.image-wrapper .overlay, .project-image .overlay {
+.image-wrapper .overlay, .project-image .overlay, .second-project-image .overlay {
     position: absolute;
     opacity: 0.5;
     top: 0;
@@ -470,14 +470,14 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 5px;
   }
 
-  .image-wrapper:hover .overlay, .project-image:hover .overlay{
+  .image-wrapper:hover .overlay, .project-image:hover .overlay, .second-project-image:hover .overlay{
     display: none;
     transform: translateX(-3px);
     transition: .5s ease;
     -webkit-transform: translateX(-3px);
   }
 
-.image-wrapper img:hover, .project-image img:hover{
+.image-wrapper img:hover, .project-image img:hover, .second-project-image img:hover{
     box-shadow:
     1px 1px RGB(209,241,222),
     2px 2px RGB(209,241,222),
@@ -664,11 +664,20 @@ h1, h2, h3, h4, h5, h6{
     align-items: center;
 }
 
+.projects-ul .the-second-grid{
+    margin-top: 50%;
+    position: relative;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+    -webkit-box-align: center;
+    align-items: center;
+}
+
 .project-image{
     box-shadow: 0 10px 30px -15px var(--navy-shadow);
     transition: var(--transition);
     grid-area: 1 / 6 / -1 / -1;
-    position: relative;
     z-index: 1;
     width:579px;
     height:362px;
@@ -677,7 +686,25 @@ h1, h2, h3, h4, h5, h6{
     margin-left: -73%;
 }
 
+.second-project-image{
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
+    grid-area: 1 / 6 / -1 / -1;
+    z-index: 1;
+    width:579px;
+    height:362px;
+    position: absolute;
+    margin-top:88%;
+    margin-right: 0%;
+}
+
 .project-image img{
+    width:inherit;
+    height:inherit;
+    transition: .5s ease;
+}
+
+.second-project-image img{
     width:inherit;
     height:inherit;
     transition: .5s ease;
@@ -691,7 +718,17 @@ h1, h2, h3, h4, h5, h6{
     height:310px;
     justify-content:flex-end;
     text-align: right;
-    border:2px solid red;
+    display: flex;
+}
+
+.projects-ul .second-project-content{
+    position: absolute;
+    left:0;
+    margin-top:53%;
+    width:495px;
+    height:310px;
+    justify-content:flex-end;
+    text-align: right;
     display: flex;
 }
 
@@ -702,17 +739,32 @@ h1, h2, h3, h4, h5, h6{
     font-weight: Bolder;
 }
 
+.projects-ul .second-feature{
+    margin: 10px 0px;
+    color: var(--matrix-color);
+    font-size: 18px;
+    font-weight: Bolder;
+    text-align: left;
+}
+
 .projects-ul .title{
     font-size: 28px;
     color: var(--headers);
     margin-bottom: 2%;;
 }
 
-.projects-ul .project-content .project-description p{
+.projects-ul .second-title{
+    font-size: 28px;
+    color: var(--headers);
+    margin-bottom: 2%;
+    text-align: left;
+}
+
+.projects-ul .project-content .project-description p, .projects-ul .second-project-content .second-project-description p {
     background: none;
 }
 
-.projects-ul .project-content .project-description{
+.projects-ul .project-content .project-description, .projects-ul .second-project-content .second-project-description {
     box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
     transition: var(--transition);
     position: relative;
@@ -726,9 +778,23 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .projects-ul .project-tech-stack{
+    position: relative;
+    z-index: 3;
+    background-color: transparent;
     display: flex;
     padding: 0px;
     justify-content: flex-end;
+    list-style: none;
+    margin-bottom:4%;
+}
+
+.projects-ul .second-project-tech-stack{
+    position: relative;
+    z-index: 3;
+    background-color: transparent;
+    display: flex;
+    padding-left: 0px;
+    justify-content: flex-start;
     list-style: none;
     margin-bottom:4%;
 }
@@ -739,7 +805,18 @@ h1, h2, h3, h4, h5, h6{
     justify-content: flex-end;
     width:60px;
     text-align: right;
-    /* float: right; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right:0px;
+}
+
+.projects-ul .second-project-tech-stack li{
+    margin:0;
+    display: flex;
+    justify-content: flex-start;
+    width:60px;
+    text-align: right;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 0px;
