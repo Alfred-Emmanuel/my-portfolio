@@ -82,12 +82,12 @@ function Header() {
               </a>
             </li>
             <li>
-              <a href="" onClick={handleClick}>
+              <a href="#projects" onClick={handleClick}>
                 Experience
               </a>
             </li>
             <li>
-              <a href="" onClick={handleClick}>
+              <a href="#contact" onClick={handleClick}>
                 Contact
               </a>
             </li>

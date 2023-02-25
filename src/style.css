@@ -78,10 +78,6 @@ ul{
 ol{
     list-style: none;
 }
-/* 
-svg{
-    width:90%;
-} */
 
 section{
     margin: 0px auto;
@@ -459,14 +455,13 @@ h1, h2, h3, h4, h5, h6{
 
 .image-wrapper .overlay, .project-image .overlay, .second-project-image .overlay {
     position: absolute;
-    opacity: 0.5;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: var(--matrix-color);
     transition: .5s ease;
-    mix-blend-mode: screen;
+    mix-blend-mode:overlay;
     border-radius: 5px;
   }
 
@@ -479,12 +474,12 @@ h1, h2, h3, h4, h5, h6{
 
 .image-wrapper img:hover, .project-image img:hover, .second-project-image img:hover{
     box-shadow:
-    1px 1px RGB(209,241,222),
-    2px 2px RGB(209,241,222),
-    3px 3px RGB(209,241,222),
-    4px 4px RGB(209,241,222),
-    5px 5px RGB(209,241,222),
-    6px 6px RGB(209,241,222);
+    1px 1px var(--matrix-color),
+    2px 2px var(--matrix-color),
+    3px 3px var(--matrix-color),
+    4px 4px var(--matrix-color),
+    5px 5px var(--matrix-color),
+    6px 6px var(--matrix-color);
     -webkit-transform: translateX(-3px);
     transform: translateX(-3px);
     transition: .5s ease;
@@ -646,6 +641,10 @@ h1, h2, h3, h4, h5, h6{
 
 .inner-job-description-div h3 .company .inline-link:hover::after{
     transform: scaleX(1);
+}
+
+#projects{
+    height: 100%;
 }
 
 .projects-ul{
@@ -822,6 +821,68 @@ h1, h2, h3, h4, h5, h6{
     padding-left: 0px;
     padding-right:0px;
 }
+
+#contact{
+    color: white;
+    margin-top: 50%;
+    max-width: 600px;
+    height: 60vh;
+    text-align: center;
+}
+
+#contact .contact{
+    display: block;
+    margin-bottom: 50px;
+    color: var(--matrix-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.contact::before{
+    position: relative;
+    counter-increment: section 4;
+    content: "0" counter(section) ".";
+    margin-right: 10px;
+    color: var(--matrix-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.contact-description{
+    font-weight: 600;
+    color: var(--headers);
+    line-height: 1.1;
+    font-size: 3rem;
+    padding-bottom: 10%;
+}
+
+.contact-text{
+    color: var(--whitish);
+    font-size: 18px;
+    padding-bottom: 10%;
+}
+
+.contact-link{
+    color: var(--matrix-color);
+    background-color: transparent;
+    border: 1px solid var(--matrix-color);
+    border-radius: 5px;
+    padding: 1.25rem 1.75rem;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.contact-link:hover{
+    color: var(--whitish);
+    opacity: 0.6;
+}
+
+
 
 /* .projects-content:nth-of-type(2n+1) .project-tech-stack {
     -webkit-box-pack: end;
