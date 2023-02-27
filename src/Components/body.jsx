@@ -70,7 +70,8 @@ function Body() {
                 <li>Javascript</li>
                 <li>CSS 3</li>
                 <li>HTML 5</li>
-                <li>Git and Github</li>
+                <li>Git</li>
+                <li>Github</li>
                 <li>Wordpress</li>
               </ul>
             </div>
