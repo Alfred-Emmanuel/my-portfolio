@@ -1,17 +1,15 @@
 import React, { Component, useState, useEffect } from "react";
+import LeftSideBar from "./leftSideBar";
 
-function Body() {
+function Body(props) {
   const [activeDiv, setActiveDiv] = useState(1);
 
   const toggleDiv = divNum => {
     setActiveDiv(divNum);
   };
 
-  const style = {
-    width: "5%",
-    height: "5%",
-    margin: "1%",
-    cursor: "pointer",
+  const transparentBg = {
+    backgroundColor: "transparent",
   };
 
   return (
@@ -81,6 +79,7 @@ function Body() {
             </div>
           </div>
         </section>
+
         <section id="jobs">
           <h2 className="heading">Places i've worked</h2>
           <div className="inner">
@@ -89,12 +88,15 @@ function Body() {
                 <span>Strictly Dev</span>
               </button>
               <button onClick={() => toggleDiv(2)}>
-                <span>Strictly Dev</span>
+                <span>Here</span>
               </button>
               <button onClick={() => toggleDiv(3)}>
-                <span>Strictly Dev</span>
+                <span>and There</span>
+              </button>{" "}
+              <button onClick={() => toggleDiv(3)}>
+                <span>Somewhere else</span>
               </button>
-            </div>
+            </div>{" "}
             <div className="outer-job-description-div">
               <div
                 className="inner-job-description-div"
@@ -212,10 +214,15 @@ function Body() {
                   <div className="overlay"></div>
                 </div>
                 <div className="project-content">
-                  <div>
-                    <p className="feature">Featured Project</p>
+                  <div style={transparentBg}>
+                    <p className="feature" style={transparentBg}>
+                      Featured Project
+                    </p>
                     <h3 className="title"> CBT App</h3>
-                    <div className="project-description">
+                    <div
+                      className="project-description"
+                      style={props.mobileSize ? transparentBg : null}
+                    >
                       <p>
                         This was created for a pharmaceutical company for an
                         entrance exam which students in more than half the
@@ -223,13 +230,21 @@ function Body() {
                       </p>
                     </div>
                     <ul className="project-tech-stack">
-                      <li>React</li>
-                      <li>JSX</li>
-                      <li>CSS</li>
-                      <li>HTML</li>
+                      <li style={props.mobileSize ? transparentBg : null}>
+                        React
+                      </li>
+                      <li style={props.mobileSize ? transparentBg : null}>
+                        JSX
+                      </li>
+                      <li style={props.mobileSize ? transparentBg : null}>
+                        CSS
+                      </li>
+                      <li style={props.mobileSize ? transparentBg : null}>
+                        HTML
+                      </li>
                     </ul>
-                    <div>
-                      <a>
+                    <div style={transparentBg}>
+                      <a style={transparentBg}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           role="img"
@@ -237,13 +252,13 @@ function Body() {
                           fill="none"
                           stroke="currentColor"
                           stroke-width="2"
-                          style={style}
+                          style={props.style}
                         >
                           <title>GitHub</title>
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
                       </a>
-                      <a>
+                      <a style={transparentBg}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           role="img"
@@ -251,7 +266,7 @@ function Body() {
                           fill="none"
                           stroke="currentColor"
                           stroke-width="2"
-                          style={style}
+                          style={props.style}
                         >
                           <title>External Link</title>
                           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -266,28 +281,44 @@ function Body() {
 
               <li className="the-second-grid">
                 <div className="second-project-image">
-                  <img src="/face.jpg" />
+                  <img src="/logo.jpeg" />
                   <div className="overlay"></div>
                 </div>
                 <div className="second-project-content">
-                  <div>
-                    <p className="second-feature">Featured Project</p>
+                  <div style={transparentBg}>
+                    <p className="second-feature" style={transparentBg}>
+                      Featured Project
+                    </p>
                     <h3 className="second-title"> CBT App</h3>
-                    <div className="second-project-description">
-                      <p>
+                    <div
+                      className="second-project-description"
+                      style={props.mobileSize ? transparentBg : null}
+                    >
+                      <p className="description-text">
                         This was created for a pharmaceutical company for an
                         entrance exam which students in more than half the
                         country take
                       </p>
                     </div>
-                    <ul className="second-project-tech-stack">
-                      <li>React</li>
-                      <li>JSX</li>
-                      <li>CSS</li>
-                      <li>HTML</li>
+                    <ul
+                      className="second-project-tech-stack"
+                      style={transparentBg}
+                    >
+                      <li style={props.mobileSize ? transparentBg : null}>
+                        React
+                      </li>
+                      <li style={props.mobileSize ? transparentBg : null}>
+                        JSX
+                      </li>
+                      <li style={props.mobileSize ? transparentBg : null}>
+                        CSS
+                      </li>
+                      <li style={props.mobileSize ? transparentBg : null}>
+                        HTML
+                      </li>
                     </ul>
-                    <div>
-                      <a>
+                    <div style={transparentBg}>
+                      <a style={transparentBg}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           role="img"
@@ -295,13 +326,13 @@ function Body() {
                           fill="none"
                           stroke="currentColor"
                           stroke-width="2"
-                          style={style}
+                          style={props.style}
                         >
                           <title>GitHub</title>
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
                       </a>
-                      <a>
+                      <a style={transparentBg}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           role="img"
@@ -309,7 +340,7 @@ function Body() {
                           fill="none"
                           stroke="currentColor"
                           stroke-width="2"
-                          style={style}
+                          style={props.style}
                         >
                           <title>External Link</title>
                           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>

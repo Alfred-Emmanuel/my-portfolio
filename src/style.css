@@ -9,6 +9,10 @@
     background-color: rgb(23, 23, 23);
 }
 
+body{
+    overflow-x: hidden;
+}
+
 :root{
     --matrix-color: rgb(3, 160, 98);
     --whitish: #8892b0;
@@ -29,7 +33,7 @@ header{
     place-items: center;
     position: fixed;
     top:0px;
-    transition: height 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
     /* box-shadow: 0 10px 30px -10px var(--whitish); */
     z-index: 10;
     /* place-content: center; */
@@ -56,7 +60,6 @@ nav{
     width:90%;
     height: inherit;
     align-items: center;
-    backdrop-filter: blur(10px);
 }
 ol{
     counter-reset: item;
@@ -64,6 +67,7 @@ ol{
 
 nav div img{
     width:50px;
+    padding-left: 15%;;
 }
 
 #root{
@@ -86,8 +90,8 @@ section{
 
 main {
     margin: 0px auto;
-    width: 100%;
-    max-width: 1600px;
+    width: 100vw;
+    /* max-width: 1600px; */
     min-height: 100vh;
     padding: 170px 280px;
     border-top: 2px solid var(--matrix-color);
@@ -453,38 +457,6 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 5px;
 }
 
-.image-wrapper .overlay, .project-image .overlay, .second-project-image .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--matrix-color);
-    transition: .5s ease;
-    mix-blend-mode:overlay;
-    border-radius: 5px;
-  }
-
-  .image-wrapper:hover .overlay, .project-image:hover .overlay, .second-project-image:hover .overlay{
-    display: none;
-    transform: translateX(-3px);
-    transition: .5s ease;
-    -webkit-transform: translateX(-3px);
-  }
-
-.image-wrapper img:hover, .project-image img:hover, .second-project-image img:hover{
-    box-shadow:
-    1px 1px var(--matrix-color),
-    2px 2px var(--matrix-color),
-    3px 3px var(--matrix-color),
-    4px 4px var(--matrix-color),
-    5px 5px var(--matrix-color),
-    6px 6px var(--matrix-color);
-    -webkit-transform: translateX(-3px);
-    transform: translateX(-3px);
-    transition: .5s ease;
-    }
-
 #jobs{
     max-width: 700px;
     color:var(--whitish);
@@ -645,12 +617,48 @@ h1, h2, h3, h4, h5, h6{
 
 #projects{
     height: 100%;
+    overflow: hidden;
 }
+@media screen and (min-width:1000px) {
 
+    .image-wrapper .overlay, .project-image .overlay, .second-project-image .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--matrix-color);
+        transition: .5s ease;
+        mix-blend-mode:overlay;
+        border-radius: 5px;
+      }
+    
+      .image-wrapper:hover .overlay, .project-image:hover .overlay, .second-project-image:hover .overlay{
+        display: none;
+        transform: translateX(-3px);
+        transition: .5s ease;
+        -webkit-transform: translateX(-3px);
+      }
+    
+    .image-wrapper img:hover, .project-image img:hover, .second-project-image img:hover{
+        box-shadow:
+        1px 1px var(--matrix-color),
+        2px 2px var(--matrix-color),
+        3px 3px var(--matrix-color),
+        4px 4px var(--matrix-color),
+        5px 5px var(--matrix-color),
+        6px 6px var(--matrix-color);
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+        transition: .5s ease;
+        }
 .projects-ul{
     list-style: none;
     padding: 0px;
     margin: 0px;
+    border: 2px solid red;
+    overflow: hidden;
+    height:900px
 }
 
 .projects-ul .the-grid{
@@ -714,7 +722,7 @@ h1, h2, h3, h4, h5, h6{
     right:0;
     margin-top:53%;
     width:495px;
-    height:310px;
+    height:350px;
     justify-content:flex-end;
     text-align: right;
     display: flex;
@@ -725,10 +733,11 @@ h1, h2, h3, h4, h5, h6{
     left:0;
     margin-top:53%;
     width:495px;
-    height:310px;
+    height:350px;
     justify-content:flex-end;
     text-align: right;
     display: flex;
+}
 }
 
 .projects-ul .feature{
@@ -774,6 +783,16 @@ h1, h2, h3, h4, h5, h6{
     color: #a8b2D1;
     font-size: 18px;
     margin-bottom:3%;
+}
+
+.projects-ul .project-content .project-description{
+    padding-right: 0;
+}
+
+.projects-ul .second-project-content .second-project-description
+{
+    padding-left:0;
+
 }
 
 .projects-ul .project-tech-stack{
@@ -884,24 +903,27 @@ h1, h2, h3, h4, h5, h6{
 
 /* Writing The media queries */
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width:480px) {
+
+    :root{
+        --paragraph-size: 1.4rem;
+        --header-size: 1.65rem;
+    }
     header{
-        height: 250px;
+        height: 70px;
     }
 
     main {
-        margin: 0px auto;
-        width: 100%;
-        max-width: 1600px;
-        min-height: 100vh;
-        padding: 170px 00px;
+        /* margin: 0px auto; */
+        padding:0px;
+        /* width: 100vw; */
+        max-width: 400px;
         border-top: 2px solid var(--matrix-color);
     }
     
     .scrolling{
-        height: 150px;
+        height: 60px;
     }
-
 
     .logo-div{
         position: absolute;
@@ -909,12 +931,8 @@ h1, h2, h3, h4, h5, h6{
     }
 
     .logo-div img{
-        width:200px;
-        height: 250px;
-    }
-
-    .left-side-bar{
-        display: none;
+        width:70px;
+        height: 90px;
     }
 
     .right-side-bar{
@@ -922,80 +940,80 @@ h1, h2, h3, h4, h5, h6{
     }   
 
     .introduction {
-        padding: 0px;
-        padding-left: 5.5%;
-        margin-top:10%;
+        padding: 0;
+        padding-left:3%;
+        margin-top:40%;
+        margin-bottom: 18%;
+        /* padding-left: 5.5%; */
         /* margin-bottom: 32%; */
-        width:1100px;
+        width:100%;
         height: fit-content;
     }
     
     .introduction .h2-div{
-        position: relative;
-        top:-20%;
+        /* top:-20%; */
         padding:none;
-        padding-bottom: 100px;
+        width:300px;
+        padding-bottom: 20px;
         margin:none;
-        background-color: transparent;
     }
 
     .introduction .name-div h1{
-        font-size: 8rem;
+        font-size: 2.8rem;
+        white-space: nowrap;
     }
 
     .introduction .name-div{
-        position: relative;
-        top:-15%;
-        padding-bottom: 80px;
+        margin: 0;
+        padding-bottom: 20px;
     }
 
     .introduction h2 {
-        font-size: 55px;
+        font-size: 1.5rem;
         font-weight: 400;
-        padding-bottom: -700px;
+        /* padding-bottom: px; */
     }
     
     .introduction .description{
         margin: 0px;
-        font-size: 7.5rem;
+        white-space: nowrap;
+        font-size: 2.5rem;
     }
 
     .introduction p{
-        font-size: 45px;
+        font-size: var(--paragraph-size);
+        line-height: 1.5;
         margin-top:5%;
         margin-bottom:5%;
-        max-width: 800px;
-        display: block;
     }
     
     .introduction .description-div{
-        position: relative;
-        top:-11%;
-        padding-bottom: 80px;
+        padding-bottom: 20px;
+
     }
     
     .introduction .introduction-div{
-        position: relative;
-        top:-5%;
-        padding-bottom: 200px;
+        padding-bottom: 30px;
     }
 
     .div-btn-body{
-        padding:15px;
-        font-size: 32px;
-        height:100px;
-        width:300px;
+        /* padding:15px; */
+        font-size: 1.7rem;
+        white-space: nowrap;
+        height:70px;
+        width:200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
     }
 
     /* About me section */
     #about{
-        max-width: 1000px;
-        margin-top: 23%
-    }
-    
-    .about-me{
-       
+        margin:0;
+        margin-top:5%;
+        padding: 0;
+        padding-left: 4%;
     }
     
     .about-me::before {
@@ -1004,7 +1022,7 @@ h1, h2, h3, h4, h5, h6{
         content: "0" counter(section) ".";
         margin-right: 10px;
         color: var(--matrix-color); */
-        font-size: 50px;
+        font-size: 1.5rem;
         font-weight: 400;
     }
     
@@ -1012,16 +1030,15 @@ h1, h2, h3, h4, h5, h6{
         content: "";
         display: block;
         position: relative;
-        top: -29px;
-        width: 300px;
+        top: -12px;
+        width: 100px;
         height: 1px;
-        left: 40%;
-        background-color: var(--very-light-navy);
+        left: 45%;
+        background-color: var(--matrix-color);
     }
 
 #about h2 {
-    font-size: 55px;
-    font-weight: bold;
+    font-size: var(--header-size);
 }
 
 #about .inner{
@@ -1031,54 +1048,225 @@ h1, h2, h3, h4, h5, h6{
 }
 
 #about p{
-    margin: 0px 0px 15px;
+    /* margin: 0px 0px 15px; */
     margin-bottom: 5%;
-    font-size: 45px;
+    font-size: var(--paragraph-size);
+    line-height: 1.5;
     color: var(--whitish)
-}
-
-#about p:last-child, p:last-of-type {
-    margin: 0px;
 }
 
 #about .skills{
     display: grid;
-    grid-template-columns: repeat(2, minmax(500px, 250px));
-    gap: 0px 10px;
+    grid-template-columns: repeat(2, minmax(30px, 200px));
+    gap: 0px 5px;
     padding: 0px;
-    margin: 20px 0px 0px;
+    /* margin: 20px 0px 0px; */
     overflow: hidden;
     list-style: none;
 }
 
 #about .inner .inner-inner .skills li{
-        position: relative;
+        /* position: relative; */
         margin-top:4%;
         margin-bottom: 10px;
-        padding-left: 35px;
-        font-size: 45px;
+        padding-left: 7%;
+        font-size: var(--paragraph-size);
 }
 
 #about .inner .inner-inner .skills li::before {
     content: "▹";
-    position: absolute;
-    left: 0px;
+    /* position: absolute; */
     color: var(--matrix-color);
-    font-size: 40px;
+    margin-top: 2%;
+    font-size: 1rem;
     font-weight: bolder;
 }
 
 .image-wrapper{
     margin: 0 auto;
-    max-width:650px;
-    max-height: 650px;
-    min-width: 650px;
-    min-height: 650px;
-    width:650px;
-    height: 650px;
+    max-width:250px;
+    max-height: 250px;
+    min-width: 250px;
+    min-height: 250px;
+    width:250px;
+    height: 250px;
     position: relative;
     border-radius: 5px;
     margin-top: 15%;
 }
+
+#jobs{
+    padding-left: 4%;
+}
+
+#jobs .heading{
+    font-size: var(--header-size);
+}
+
+.heading:after{
+    display: block;
+    position: relative;
+    top: 2px;
+    background-color: var(--matrix-color);
+}
+
+#jobs .inner{
+    display: block;
+}
+
+#jobs .inner .job-tabs{
+    display: flex;
+    width:90%;
+    overflow-x: scroll;
+    border:none;
+}
+
+#jobs .inner .job-tabs::-webkit-scrollbar{
+    color:red;
+    visibility: visible;
+    height:10px;
+}
+
+#jobs .inner .job-tabs button{
+    border:none;
+    border-bottom: 1px solid var(--matrix-color);
+}
+
+#jobs .inner .job-tabs button:focus{
+    border-left: none;
+    border-bottom: 4px solid var(--matrix-color);
+    /* background-color: rgba(70, 92, 99, 0.5); */
+    color:var(--matrix-color)
+}
+
+#jobs .inner .outer-job-description-div{
+    padding:0;
+    padding-left: 2%;
+    margin:0;
+}
+
+#projects{
+    /* border:2px solid ghostwhite; */
+    height: 980px;
+    margin-bottom: 0;
+    /* border:2px solid white */
+}
+
+#projects .projects-ul{
+    margin:0;
+    padding:0;
+    padding-left: 3%;
+    padding-right:3%;
+    height: 790px;
+    /* border:2px solid white */
+}
+
+#projects .projects-ul .the-grid{
+    margin:0;
+    padding:0;
+    border:1px dashed var(--matrix-color);
+    height: 375px;
+}
+
+#projects .projects-ul .the-second-grid{
+    /* display: block; */
+    position: relative;
+    top:30px;
+    margin-top:0%;
+    padding:0;
+    border:1px dashed var(--matrix-color);
+    height:375px;
+    /* display: none; */
+}
+
+.the-grid .project-image, .the-second-grid .second-project-image{
+    height:375px;
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.the-grid .project-image img, .the-second-grid .second-project-image img{
+    max-width:100%;
+    height: 100%;
+    object-fit:fill;
+    object-position: center center;
+    /* display: none; */
+}
+
+.the-grid .project-image .overlay,  .the-second-grid .second-project-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+  }
+
+  .projects-ul .project-content, .projects-ul .second-project-content{
+    position: relative;
+    top:-350px;
+    background-color: transparent;
+    z-index: 4;
+    width:100%;
+    height:100%;
+}
+
+.projects-ul .project-content{
+    padding-right: 5%;
+    text-align: right;
+}
+
+.projects-ul .second-project-content{
+    padding-left: 5%;
+    text-align: left;
     
+}
+
+.second-project-content .second-project-description{
+    margin:0;
+    padding-left: 0;
+}
+
+.second-project-content .second-project-description .description-text{
+    text-align: left;
+}
+
+#contact{
+    margin:0;
+    height:90vh
+}
+
+#contact .contact-text{
+    margin:0 auto;
+    margin-bottom: 25%;
+    width:90%;
+    line-height:1.2;
+    text-align: center;
+    font-size: 16px;
+}
+
+.mobile-icons{
+    height:5vh;
+}
+
+.mobile-icons ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.built{
+    color: rgb(3, 160, 98);
+    font-size: 16px;
+    height: 5vh;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
 }
