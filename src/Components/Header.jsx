@@ -57,6 +57,22 @@ function Header() {
     headerVisible ? "" : "hide"
   } `;
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const hamburgerStyle = {
+    width: "70px",
+    height: "50px",
+    color: "#03a062",
+    background: "none",
+    position: "absolute",
+    right: "20px",
+    // transition: "transform 0.3s ease-in-out",
+  };
+
   console.log(show);
   return (
     <header
@@ -64,10 +80,43 @@ function Header() {
         headerVisible ? "" : "hide"
       }`}
     >
-      <nav>
-        <div className="logo-div">
-          <img src="/mainLogo.png" className="logo" />
-        </div>
+      <div className="logo-div">
+        <img src="/mainLogo.png" className="logo" />
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        style={hamburgerStyle}
+        onClick={toggleMenu}
+        className="w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 9h16.5m-16.5 6.75h16.5"
+        />
+      </svg>
+
+      <nav className={isOpen ? "mobile open" : "closed"}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          onClick={toggleMenu}
+          style={hamburgerStyle}
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
 
         <div className="menu">
           <ol>

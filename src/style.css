@@ -14,7 +14,7 @@ body{
 }
 
 :root{
-    --matrix-color: rgb(3, 160, 98);
+    --matrix-color: #03a062;
     --whitish: #8892b0;
     --matrix-font: 'VT323', monospace;
     --monospace-font:  'Space Mono',"Fira Code","Fira Mono","Roboto Mono",monospace;
@@ -118,30 +118,6 @@ h1, h2, h3, h4, h5, h6{
     transition: opacity 0.5s ease-out;
   }
 
-.menu{
-    background-color: transparent;
-    position: absolute;
-    left:35%
-}
-
-.menu ol{
-    display: flex;
-    margin-left: 60%;
-    background-color: transparent;
-}
-
-.menu ol li{
-    padding-left: 35%;
-    background-color: transparent;
-}
-.menu ol li a{
-    font-size: 1.2em;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--whitish);
-    background-color: transparent;
-}
-
 .menu ol li a:hover{
     color: var(--matrix-color);
 }
@@ -215,6 +191,18 @@ h1, h2, h3, h4, h5, h6{
       transform: translateY(0);
     }
  }
+
+ @keyframes tilt {
+    0% {
+      transform: rotate(-45deg);
+    }
+    50% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(-45deg);
+    }
+  }
 
 .left-side-bar::after {
     content: "";
@@ -621,6 +609,30 @@ h1, h2, h3, h4, h5, h6{
 }
 @media screen and (min-width:1000px) {
 
+    .menu{
+        background-color: transparent;
+        position: absolute;
+        left:35%
+    }
+    
+    .menu ol{
+        display: flex;
+        margin-left: 60%;
+        background-color: transparent;
+    }
+    
+    .menu ol li{
+        padding-left: 35%;
+        background-color: transparent;
+    }
+    .menu ol li a{
+        font-size: 1.2em;
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--whitish);
+        background-color: transparent;
+    }
+
     .image-wrapper .overlay, .project-image .overlay, .second-project-image .overlay {
         position: absolute;
         top: 0;
@@ -901,6 +913,23 @@ h1, h2, h3, h4, h5, h6{
     opacity: 0.6;
 }
 
+.coming-soon{
+    background-color: #03a062;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    padding: 25px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 230px;
+    left: 250px;
+    z-index: 15;
+    white-space: NOWRAP;
+    animation: tilt 2s infinite linear;
+    /* transform-origin: top left; */
+    pointer-events: none;
+}
+
 /* Writing The media queries */
 
 @media screen and (max-width:480px) {
@@ -909,6 +938,11 @@ h1, h2, h3, h4, h5, h6{
         --paragraph-size: 1.4rem;
         --header-size: 1.65rem;
     }
+
+    body{
+        overflow-x: hidden;
+    }
+    
     header{
         height: 70px;
     }
@@ -927,7 +961,7 @@ h1, h2, h3, h4, h5, h6{
 
     .logo-div{
         position: absolute;
-        left: 0;
+        left: 5%;
     }
 
     .logo-div img{
@@ -935,6 +969,86 @@ h1, h2, h3, h4, h5, h6{
         height: 90px;
     }
 
+header svg {
+  transform: rotate(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+header .open svg {
+  transform: rotate(90deg);
+}
+
+/* header .mobile {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+header .open .mobile {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+} */
+
+    nav{
+        /* display: none; */
+        /* border: 2px solid red; */
+        color:white;
+        display: block;
+        height:100vh;
+        position: fixed;
+        top:0;
+        right:0;
+        padding:0;
+        padding-top: 10px;
+        text-align: center;
+        width: 70vw;
+        transition: visibility 0s, opacity 0.3s ease-in-out;
+        /* background: linear-gradient(to right, #000, #444); */
+        background-color: rgb(23, 23, 23);
+        z-index: 1;
+        overflow:auto;
+    }
+
+    nav::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 33vw;
+        height: 100vh;
+        background: var(--matrix-color);
+        filter: blur(10px);
+        z-index: -1;
+        mix-blend-mode:exclusion;
+        opacity: 0.5;
+    }
+
+    .closed{
+        display: none;
+    }
+
+    .menu{
+        background-color: transparent;
+    }
+
+    .menu ol{
+        margin-top:40%;
+        background-color: transparent;
+    }
+
+    .menu ol li{
+        padding:10px;
+        padding-top:40px;
+        background-color: transparent;
+    }
+
+    .menu ol li a{
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--whitish);
+        background-color: transparent;
+    }
     .right-side-bar{
         display: none;
     }   
@@ -1103,7 +1217,7 @@ h1, h2, h3, h4, h5, h6{
     font-size: var(--header-size);
 }
 
-.heading:after{
+#jobs .heading:after{
     display: block;
     position: relative;
     top: 2px;
@@ -1150,6 +1264,22 @@ h1, h2, h3, h4, h5, h6{
     height: 980px;
     margin-bottom: 0;
     /* border:2px solid white */
+}
+
+#projects .heading{
+    font-size: var(--header-size);
+}
+
+#projects .heading:before{
+    font-size: 1.5rem;
+    padding-left: 4%;
+    counter-increment: section 3;
+    font-weight: 400;
+}
+
+#projects .heading:after{
+    width:90px;
+    background-color:rgb(3, 160, 98);
 }
 
 #projects .projects-ul{
@@ -1267,6 +1397,23 @@ h1, h2, h3, h4, h5, h6{
     height: 5vh;
     text-align: center;
     padding-bottom: 5%;
+}
+
+.coming-soon{
+        background-color: #03a062;
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        padding: 20px;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 340px;
+        left: 25px;
+        z-index: 2;
+        white-space: NOWRAP;
+        animation: tilt 2s infinite linear;
+        /* transform-origin: top left; */
+        pointer-events: none;
 }
 
 }
