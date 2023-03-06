@@ -1,9 +1,11 @@
 import React, { Component, useState, useEffect } from "react";
 
-function Header() {
+function Header(props) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [headerVisible, setHeaderVisible] = useState(true);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [disableScroll, setDisableScroll] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -38,6 +40,18 @@ function Header() {
     };
   }, [scrollPosition]);
 
+  // TO DISABLE SCROLL WHEN NAV IS UP
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (disableScroll) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "auto";
+    }
+  }, [disableScroll]);
+
+  // THE END OF DISABLE SCROLL
+
   function handleClick(e) {
     e.preventDefault();
     const targetId = e.currentTarget.getAttribute("href");
@@ -53,14 +67,9 @@ function Header() {
     }
   }
 
-  const show = `${isScrolling ? "scrolling-header" : ""} ${
-    headerVisible ? "" : "hide"
-  } `;
-
-  const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setDisableScroll(!disableScroll);
   };
 
   const hamburgerStyle = {
@@ -70,10 +79,9 @@ function Header() {
     background: "none",
     position: "absolute",
     right: "20px",
-    // transition: "transform 0.3s ease-in-out",
+    transition: "all 0.3s ease-in-out",
   };
 
-  console.log(show);
   return (
     <header
       className={`${isScrolling ? "scrolling" : ""} ${

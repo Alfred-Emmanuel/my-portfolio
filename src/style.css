@@ -39,20 +39,6 @@ header{
     /* place-content: center; */
 }
 
-.scrolling{
-    width: 100%;
-    height: 70px;
-    background-color: transparent;
-    backdrop-filter: blur(10px);
-    color:var(--whitish);
-    display: grid;
-    place-items: center;
-    position: fixed;
-    top:0px;
-    box-shadow: 10px 0px 30px -10px var(--whitish);
-    z-index: 10;
-}
-
 nav{
     display: flex;
     background: none;
@@ -101,6 +87,21 @@ h1, h2, h3, h4, h5, h6{
     background: none;
 }
 
+
+.scrolling{
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color:var(--whitish);
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top:0px;
+    box-shadow: 10px 0px 30px -10px var(--whitish);
+    z-index: 10;
+}
+
 .logo-div{
     background-color: transparent;
     left: 0;
@@ -132,18 +133,6 @@ h1, h2, h3, h4, h5, h6{
 }
 ::before{
     box-sizing: inherit;
-}
-
-.btn-div{
-    border: 2px solid var(--matrix-color);
-    padding:0.65%; 
-    color: var(--matrix-color);
-    border-radius: 8px;
-    font-size: 1.2em;
-    cursor: pointer;
-    background-color: rgb(23, 23, 23);
-    position: absolute;
-    right:0;
 }
 
 .btn-div:hover{
@@ -633,6 +622,18 @@ h1, h2, h3, h4, h5, h6{
         background-color: transparent;
     }
 
+    .btn-div{
+        border: 2px solid var(--matrix-color);
+        padding:0.65%; 
+        color: var(--matrix-color);
+        border-radius: 8px;
+        font-size: 1.2em;
+        cursor: pointer;
+        background-color: rgb(23, 23, 23);
+        position: absolute;
+        right:0;
+    }
+
     .image-wrapper .overlay, .project-image .overlay, .second-project-image .overlay {
         position: absolute;
         top: 0;
@@ -945,6 +946,7 @@ h1, h2, h3, h4, h5, h6{
     
     header{
         height: 70px;
+        /* background-color: white; */
     }
 
     main {
@@ -958,6 +960,20 @@ h1, h2, h3, h4, h5, h6{
     .scrolling{
         height: 60px;
     }
+
+    /* .scrolling{
+        width: 100%;
+        height: 70px;
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+        color:var(--whitish);
+        display: grid;
+        place-items: center;
+        top:0px;
+        box-shadow: 10px 0px 30px -10px var(--whitish);
+        z-index: 10;
+        overflow-y: hidden;
+    } */
 
     .logo-div{
         position: absolute;
@@ -978,23 +994,9 @@ header .open svg {
   transform: rotate(90deg);
 }
 
-/* header .mobile {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.3s ease-in-out;
-}
-
-header .open .mobile {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s, opacity 0.3s ease-in-out;
-} */
-
     nav{
-        /* display: none; */
-        /* border: 2px solid red; */
-        color:white;
-        display: block;
+        display: none;
+        min-height: 100vh;
         height:100vh;
         position: fixed;
         top:0;
@@ -1004,10 +1006,13 @@ header .open .mobile {
         text-align: center;
         width: 70vw;
         transition: visibility 0s, opacity 0.3s ease-in-out;
-        /* background: linear-gradient(to right, #000, #444); */
         background-color: rgb(23, 23, 23);
         z-index: 1;
-        overflow:auto;
+        overflow:hidden;
+    }
+
+    .open{
+        display: block;
     }
 
     nav::after {
@@ -1049,6 +1054,19 @@ header .open .mobile {
         color: var(--whitish);
         background-color: transparent;
     }
+
+    .btn-div{
+    border: 2px solid var(--matrix-color);
+    padding:0.65%; 
+    color: var(--matrix-color);
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: transparent   ;
+    position: absolute;
+    left:40%;
+    bottom:35%;
+    }
     .right-side-bar{
         display: none;
     }   
@@ -1058,8 +1076,6 @@ header .open .mobile {
         padding-left:3%;
         margin-top:40%;
         margin-bottom: 18%;
-        /* padding-left: 5.5%; */
-        /* margin-bottom: 32%; */
         width:100%;
         height: fit-content;
     }
@@ -1099,6 +1115,7 @@ header .open .mobile {
         line-height: 1.5;
         margin-top:5%;
         margin-bottom:5%;
+        
     }
     
     .introduction .description-div{
@@ -1111,7 +1128,6 @@ header .open .mobile {
     }
 
     .div-btn-body{
-        /* padding:15px; */
         font-size: 1.7rem;
         white-space: nowrap;
         height:70px;
@@ -1131,11 +1147,6 @@ header .open .mobile {
     }
     
     .about-me::before {
-        /* position: relative;
-        counter-increment: section 1;
-        content: "0" counter(section) ".";
-        margin-right: 10px;
-        color: var(--matrix-color); */
         font-size: 1.5rem;
         font-weight: 400;
     }
@@ -1162,7 +1173,6 @@ header .open .mobile {
 }
 
 #about p{
-    /* margin: 0px 0px 15px; */
     margin-bottom: 5%;
     font-size: var(--paragraph-size);
     line-height: 1.5;
@@ -1174,13 +1184,11 @@ header .open .mobile {
     grid-template-columns: repeat(2, minmax(30px, 200px));
     gap: 0px 5px;
     padding: 0px;
-    /* margin: 20px 0px 0px; */
     overflow: hidden;
     list-style: none;
 }
 
 #about .inner .inner-inner .skills li{
-        /* position: relative; */
         margin-top:4%;
         margin-bottom: 10px;
         padding-left: 7%;
@@ -1189,7 +1197,6 @@ header .open .mobile {
 
 #about .inner .inner-inner .skills li::before {
     content: "▹";
-    /* position: absolute; */
     color: var(--matrix-color);
     margin-top: 2%;
     font-size: 1rem;
@@ -1249,7 +1256,6 @@ header .open .mobile {
 #jobs .inner .job-tabs button:focus{
     border-left: none;
     border-bottom: 4px solid var(--matrix-color);
-    /* background-color: rgba(70, 92, 99, 0.5); */
     color:var(--matrix-color)
 }
 
@@ -1260,10 +1266,8 @@ header .open .mobile {
 }
 
 #projects{
-    /* border:2px solid ghostwhite; */
     height: 980px;
     margin-bottom: 0;
-    /* border:2px solid white */
 }
 
 #projects .heading{
@@ -1288,7 +1292,6 @@ header .open .mobile {
     padding-left: 3%;
     padding-right:3%;
     height: 790px;
-    /* border:2px solid white */
 }
 
 #projects .projects-ul .the-grid{
@@ -1299,14 +1302,12 @@ header .open .mobile {
 }
 
 #projects .projects-ul .the-second-grid{
-    /* display: block; */
     position: relative;
     top:30px;
     margin-top:0%;
     padding:0;
     border:1px dashed var(--matrix-color);
     height:375px;
-    /* display: none; */
 }
 
 .the-grid .project-image, .the-second-grid .second-project-image{
@@ -1323,7 +1324,6 @@ header .open .mobile {
     height: 100%;
     object-fit:fill;
     object-position: center center;
-    /* display: none; */
 }
 
 .the-grid .project-image .overlay,  .the-second-grid .second-project-image .overlay {
