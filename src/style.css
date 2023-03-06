@@ -7,10 +7,14 @@
     box-sizing: border-box;
     font-family: monospace;
     background-color: rgb(23, 23, 23);
+    /* overflow-wrap: normal; */
 }
 
 body{
     overflow-x: hidden;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
 }
 
 :root{
@@ -34,9 +38,7 @@ header{
     position: fixed;
     top:0px;
     transition: 0.3s ease-in-out;
-    /* box-shadow: 0 10px 30px -10px var(--whitish); */
     z-index: 10;
-    /* place-content: center; */
 }
 
 nav{
@@ -50,11 +52,11 @@ nav{
 ol{
     counter-reset: item;
 }
-
+/* 
 nav div img{
     width:50px;
     padding-left: 15%;;
-}
+} */
 
 #root{
     display: grid;
@@ -77,7 +79,6 @@ section{
 main {
     margin: 0px auto;
     width: 100vw;
-    /* max-width: 1600px; */
     min-height: 100vh;
     padding: 170px 280px;
     border-top: 2px solid var(--matrix-color);
@@ -87,6 +88,10 @@ h1, h2, h3, h4, h5, h6{
     background: none;
 }
 
+#root{
+    overflow-x: hidden;
+    border-top:2px solid var(--matrix-color);
+}
 
 .scrolling{
     width: 100%;
@@ -104,14 +109,18 @@ h1, h2, h3, h4, h5, h6{
 
 .logo-div{
     background-color: transparent;
-    left: 0;
+    left: 5%;
     position: absolute;
+    margin: 0;
+    padding: 0;
 }
 
 .logo{
     background-color: transparent;
     width: 150px;
     height: 100px;
+    margin: 0;
+    padding: 0s;
 }
 
 .hide {
@@ -128,7 +137,6 @@ h1, h2, h3, h4, h5, h6{
     counter-increment: item;
     margin-right: 5px;
     color: var(--matrix-color);
-    /* font-size: 1.5em; */
     text-align: right;
 }
 ::before{
@@ -145,6 +153,8 @@ h1, h2, h3, h4, h5, h6{
     width:2%;
     bottom:0;
     left:5%;
+    padding: 0;
+    margin: 0;
 }
 
 .left-side-bar ul li{
@@ -157,8 +167,8 @@ h1, h2, h3, h4, h5, h6{
     color: var(--whitish)
   }
 
-.left-side-bar ul li a:hover svg, .inner-right-side-bar a:hover{
-    color: var(--matrix-color);
+.left-side-bar ul li a:hover .left-svg, .inner-right-side-bar a:hover{
+    color: var(--matrix-color) !important;
     animation: move-up 0.2s ease-in-out forwards  1 alternate;
     animation: move-down 0.2s ease-in-out forwards;
 }
@@ -290,6 +300,7 @@ h1, h2, h3, h4, h5, h6{
     margin-bottom:5%;
     max-width: 600px;
     display: block;
+    line-height: 1.5;
 }
 
 .div-btn-body{
@@ -592,26 +603,38 @@ h1, h2, h3, h4, h5, h6{
     transform: scaleX(1);
 }
 
-#projects{
-    height: 100%;
-    overflow: hidden;
-}
-@media screen and (min-width:1000px) {
+@media screen and (min-width:700px) {
+    #projects{
+        height: 100%;
+        width:980px;
+        overflow: hidden;
+        /* margin:auto 0; */
+    }
 
+    .left-svg{
+        width:70% !important
+    }
+
+    header{
+        overflow: hidden;
+    }
     .menu{
         background-color: transparent;
         position: absolute;
-        left:35%
+        left:47%;
+        overflow-x: hidden;
+        width:40%;
+        padding: 0;;
     }
     
     .menu ol{
         display: flex;
-        margin-left: 60%;
+        justify-content: flex-start;
         background-color: transparent;
     }
     
     .menu ol li{
-        padding-left: 35%;
+        padding-left: 10%;
         background-color: transparent;
     }
     .menu ol li a{
@@ -631,7 +654,7 @@ h1, h2, h3, h4, h5, h6{
         cursor: pointer;
         background-color: rgb(23, 23, 23);
         position: absolute;
-        right:0;
+        right:5%;
     }
 
     .image-wrapper .overlay, .project-image .overlay, .second-project-image .overlay {
@@ -669,7 +692,6 @@ h1, h2, h3, h4, h5, h6{
     list-style: none;
     padding: 0px;
     margin: 0px;
-    border: 2px solid red;
     overflow: hidden;
     height:900px
 }
@@ -743,13 +765,28 @@ h1, h2, h3, h4, h5, h6{
 
 .projects-ul .second-project-content{
     position: absolute;
-    left:0;
+    bottom:-410px;
     margin-top:53%;
+    z-index: 3;
+    background-color: transparent;
     width:495px;
     height:350px;
     justify-content:flex-end;
     text-align: right;
     display: flex;
+}
+
+.contact-link{
+    color: var(--matrix-color);
+    background-color: transparent;
+    border: 1px solid var(--matrix-color);
+    border-radius: 5px;
+    padding: 1.25rem 1.75rem;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
 }
 }
 
@@ -856,7 +893,7 @@ h1, h2, h3, h4, h5, h6{
 
 #contact{
     color: white;
-    margin-top: 50%;
+    margin-top: 20%;
     max-width: 600px;
     height: 60vh;
     text-align: center;
@@ -894,19 +931,6 @@ h1, h2, h3, h4, h5, h6{
     color: var(--whitish);
     font-size: 18px;
     padding-bottom: 10%;
-}
-
-.contact-link{
-    color: var(--matrix-color);
-    background-color: transparent;
-    border: 1px solid var(--matrix-color);
-    border-radius: 5px;
-    padding: 1.25rem 1.75rem;
-    font-size: 16px;
-    line-height: 1;
-    text-decoration: none;
-    cursor: pointer;
-    transition: var(--transition);
 }
 
 .contact-link:hover{
@@ -1375,10 +1399,12 @@ header .open svg {
     margin:0 auto;
     margin-bottom: 25%;
     width:90%;
-    line-height:1.2;
-    text-align: center;
+    line-height:1.5;
+    text-align: left;
     font-size: 16px;
 }
+
+.contact-link
 
 .mobile-icons{
     height:5vh;

@@ -42,11 +42,12 @@ const style = {
 //   }
 
 const mobileSize = screenWidth < 481;
-const unScrollableInMobile = screenWidth > 480
+console.log(screenWidth)
+// const unScrollableInMobile = screenWidth > 480
 // console.log(unScrollableInMobile)
     return ( 
         <div className='container'>
-            <Header mobileSize={unScrollableInMobile}/>
+            <Header mobileSize={mobileSize}/>
             <Body mobileSize={mobileSize} style={style}/>
             <LeftSideBar mobileSize={mobileSize} style={iconSvg}/>
             <p className='built'>Built by Alfred Emmanuel</p>

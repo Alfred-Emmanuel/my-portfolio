@@ -31,9 +31,11 @@ function Body(props) {
           </div>
           <div className="introduction-div">
             <p>
-              I’m a software engineer specializing in building (and occasionally
-              designing) exceptional digital experiences. Currently, I’m focused
-              on building accessible, human-centered products at
+              As a frontend engineer, my primary focus is on building engaging
+              and responsive user interfaces that provide seamless and enjoyable
+              experiences for users. I work with a variety of web technologies,
+              to design and develop web applications that are visually appealing
+              and highly functional.
             </p>
           </div>
           <div className="div-btn-body">
@@ -47,22 +49,26 @@ function Body(props) {
             <div className="inner-inner">
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Cumque est, labore molestias voluptatum animi nisi eum
-                  repellendus quo veniam quas ea voluptatem error voluptatibus
-                  eaque. Saepe dolorem
+                  Hello, my name is Alfred and i enjoy turning or creating
+                  designs into visually appealing and user friendly web apps
                 </p>
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Molestias, culpa totam. Eaque dolores eligendi omnis aperiam,
-                  est iure nostrum? Quibusdam est magnam ipsum laborum, corporis
-                  libero aliquid.
+                  My interest in web development started back in 2020 when i
+                  decided to break the stereotype of having to be able to work
+                  from only one location.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Harum sit quibusdam, fugiat.
+                  I enjoy the fast-paced and constantly evolving nature of
+                  frontend engineering, which requires me to stay up-to-date
+                  with the latest trends and best practices in the field. My
+                  passion for creating intuitive user interfaces that enhance
+                  the user experience drives me to continuously learn and
+                  improve my skills.
                 </p>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>
+                  Below are some of the technologies i consider myself to be
+                  proficient in
+                </p>
               </div>
               <ul className="skills">
                 <li>React</li>
@@ -362,9 +368,13 @@ function Body(props) {
           <h2 className="contact">Wanna Talk?</h2>
           <h2 className="contact-description">Shoot me a message</h2>
           <p className="contact-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
-            incidunt quas illum molestias facere a tempora placeat omnis itaque
-            modi!
+            I am a dedicated, self-taught and experienced Frontend engineer with
+            a passion for building top notch websites committed to delivering
+            exceptional results and providing value to clients and employers
+            alike.
+            <br /> I am actively seeking new opportunities to apply my skills
+            and expertise in Frontend engineering. Please feel free to contact
+            me for any potential job openings or collaborations.
           </p>
           <a className="contact-link" href="mailto:ealfred828@gmail.com">
             Get in Touch
