@@ -373,7 +373,7 @@ function Body(props) {
             exceptional results and providing value to clients and employers
             alike.
             <br /> I am actively seeking new opportunities to apply my skills
-            and expertise in Frontend engineering. Please feel free to contact
+            and expertise in Frontend development. Please feel free to contact
             me for any potential job openings or collaborations.
           </p>
           <a className="contact-link" href="mailto:ealfred828@gmail.com">

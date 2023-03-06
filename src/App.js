@@ -41,7 +41,8 @@ const style = {
 //     textAlign: "center"
 //   }
 
-const mobileSize = screenWidth < 481;
+// const mobileSize = screenWidth < 481;
+const mobileSize = screenWidth < 650;
 console.log(screenWidth)
 // const unScrollableInMobile = screenWidth > 480
 // console.log(unScrollableInMobile)

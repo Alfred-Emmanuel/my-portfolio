@@ -66,10 +66,7 @@ function LeftSideBar(props) {
             target="_blank"
           >
             <svg
-              // style="color: rgb(128, 128, 128);"
               xmlns="http://www.w3.org/2000/svg"
-              // width="16"
-              // height="16"
               fill="none"
               strokeWidth="2"
               stroke="currentColor"
