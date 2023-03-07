@@ -776,6 +776,21 @@ h1, h2, h3, h4, h5, h6{
     display: flex;
 }
 
+.second-project-content div div{
+    text-align: left !important;
+
+}
+
+.second-project-content  div div a{
+    text-decoration: none;
+    color:inherit;
+
+}
+
+.second-project-svg{
+    margin-left: -0% !important;
+}
+
 .contact-link{
     color: var(--matrix-color);
     background-color: transparent;
