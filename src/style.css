@@ -788,6 +788,14 @@ h1, h2, h3, h4, h5, h6{
     cursor: pointer;
     transition: var(--transition);
 }
+
+.built{
+    color: rgb(3, 160, 98);
+    font-size: 16px;
+    position: relative;
+    bottom: -35%;
+    text-align: center;
+}
 }
 
 .projects-ul .feature{
@@ -1395,16 +1403,11 @@ header .open svg {
 #contact{
     margin:0;
     height:90vh;
-    border: 2px solid red;
     width:100vw;
 }
 
 #contact .contact-description{
     font-size: 2.5rem;
-}
-
-#contact .contact{
-
 }
 
 #contact .contact-text{
@@ -1864,7 +1867,6 @@ nav{
 }
 
 #jobs .inner .job-tabs::-webkit-scrollbar{
-    color:red;
     visibility: visible;
     height:10px;
 }
