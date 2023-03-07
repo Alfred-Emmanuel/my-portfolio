@@ -657,37 +657,37 @@ h1, h2, h3, h4, h5, h6{
         margin-top: 15%;
     }
 
-    .image-wrapper .overlay, .project-image .overlay, .second-project-image .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--matrix-color);
-        transition: .5s ease;
-        mix-blend-mode:overlay;
-        border-radius: 5px;
-      }
-    
-      .image-wrapper:hover .overlay, .project-image:hover .overlay, .second-project-image:hover .overlay{
-        display: none;
-        transform: translateX(-3px);
-        transition: .5s ease;
-        -webkit-transform: translateX(-3px);
-      }
-    
-    .image-wrapper img:hover, .project-image img:hover, .second-project-image img:hover{
-        box-shadow:
-        1px 1px var(--matrix-color),
-        2px 2px var(--matrix-color),
-        3px 3px var(--matrix-color),
-        4px 4px var(--matrix-color),
-        5px 5px var(--matrix-color),
-        6px 6px var(--matrix-color);
-        -webkit-transform: translateX(-3px);
-        transform: translateX(-3px);
-        transition: .5s ease;
-        }
+.image-wrapper .overlay, .project-image .overlay, .second-project-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--matrix-color);
+    transition: .5s ease;
+    mix-blend-mode:overlay;
+    border-radius: 5px;
+    }
+
+    .image-wrapper:hover .overlay, .project-image:hover .overlay, .second-project-image:hover .overlay{
+    display: none;
+    transform: translateX(-3px);
+    transition: .5s ease;
+    -webkit-transform: translateX(-3px);
+    }
+
+.image-wrapper img:hover, .project-image img:hover, .second-project-image img:hover{
+    box-shadow:
+    1px 1px var(--matrix-color),
+    2px 2px var(--matrix-color),
+    3px 3px var(--matrix-color),
+    4px 4px var(--matrix-color),
+    5px 5px var(--matrix-color),
+    6px 6px var(--matrix-color);
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+    transition: .5s ease;
+    }
 .projects-ul{
     list-style: none;
     padding: 0px;
@@ -894,7 +894,7 @@ h1, h2, h3, h4, h5, h6{
 #contact{
     color: white;
     margin-top: 20%;
-    max-width: 600px;
+    width: 600px;
     height: 60vh;
     text-align: center;
 }
@@ -1394,19 +1394,27 @@ header .open svg {
 
 #contact{
     margin:0;
-    height:90vh
+    height:90vh;
+    border: 2px solid red;
+    width:100vw;
 }
 
 #contact .contact-description{
     font-size: 2.5rem;
 }
 
+#contact .contact{
+
+}
+
 #contact .contact-text{
-    margin:0 auto;
+    /* margin:0 auto; */
     margin-bottom: 9%;
-    width:90%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width:100%;
     line-height:1.5;
-    text-align: left;
+    text-align: center;
     font-size: 16px;
 }
 
@@ -1437,15 +1445,15 @@ header .open svg {
 .built{
     color: rgb(3, 160, 98);
     font-size: 16px;
-    height: 5vh;
+    position: relative;
+    bottom: -10%;
     text-align: center;
-    padding-bottom: 5%;
 }
 
 .coming-soon{
         background-color: #03a062;
         color: white;
-        font-size: 50px;
+        font-size: 45px;
         font-weight: bold;
         padding: 20px;
         transform: rotate(-45deg);
@@ -1510,7 +1518,7 @@ header .open svg {
 
 header{
     /* width: 100%; */
-    /* border: 2px solid red; */
+    /*  */
     height: 100px;
     background-color: transparent;
     backdrop-filter: blur(10px);
@@ -1537,7 +1545,7 @@ nav{
 
     .menu{
         background-color: transparent;
-        /* border: 2px solid red; */
+        /*  */
         width: 100%;
         /* display: block; */
         position: relative;
@@ -1545,7 +1553,7 @@ nav{
         top:0;
         /* height: 100%; */
         margin-left: 0%;
-        /* border: 2px solid red; */
+        /*  */
         /* padding: none !important; */
 
         display: flex;
@@ -1599,10 +1607,48 @@ nav{
     }
     .right-side-bar{
         display: flex;
-    }   
+        right:0%;
+        height:38%;
+        width:5%;
+        background-color: transparent;
+        text-align: center;
+    } 
+
+    .inner-right-side-bar::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 75px;
+        margin: 0px auto;
+        background-color: var(--matrix-color);
+    }
+
+    .inner-right-side-bar a{
+        background-color: transparent;
+        font-size: 1.5rem;
+    }
+    
+    .left-side-bar{
+        /* border:2px solid red; */
+        width: 22px;
+        height:36%;
+    }
+
+    .left-side-bar::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 190px;
+        margin: 0px auto;
+        background-color: var(--matrix-color);
+    }
+
+    .left-svg{
+        width:140% !important;
+    }
 
     .introduction {
-        border:2px solid red;
+        
         padding: 0;
         /* padding-left:3%; */
         margin-top:40%;
@@ -1684,7 +1730,7 @@ nav{
     margin-left: -29%;
     padding: 0;
     /* padding-left: 4%; */
-    border: 2px solid red;
+    
     width:77vw;
 }
 
@@ -1770,39 +1816,41 @@ nav{
 
 #jobs{
     /* padding-left: 4%; */
-    border: 2px solid red;
+    
     width:77vw;
     margin-left: -29%;
     /* padding-bottom: 0; */
 }
 
-.coming-soon{
-    background-color: #03a062;
-    color: white;
-    font-size: 70px;
-    font-weight: bold;
-    padding: 40px;
-    transform: rotate(-45deg);
-    position: absolute;
-    top: 340px;
-    left: 10px;
-    z-index: 2;
-    white-space: NOWRAP;
-    animation: tilt 2s infinite linear;
-    /* transform-origin: top left; */
-    pointer-events: none;
-}
-
 #jobs .heading{
     font-size: var(--header-size);
 }
+.heading:before {
+    position: relative;
+    counter-increment: section 2;
+    content: "0" counter(section) ".";
+    margin-right: 10px;
+    color: var(--matrix-color);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
 
-#jobs .heading:after{
+.heading:after{
+    content: "";
+    display: block;
+    position: relative;
+    top: -50%;
+    width: 200px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: var(--matrix-color);
+}
+/* #jobs .heading:after{
     display: block;
     position: relative;
     top: 2px;
     background-color: var(--matrix-color);
-}
+} */
 
 #jobs .inner{
     display: block;
@@ -1839,8 +1887,10 @@ nav{
 }
 
 #projects{
-    height: 980px;
+    /* height: 980px; */
     margin-bottom: 0;
+    width:77vw;
+    margin-left: -29%;
 }
 
 #projects .heading{
@@ -1855,7 +1905,7 @@ nav{
 }
 
 #projects .heading:after{
-    width:90px;
+    width:200px;
     background-color:rgb(3, 160, 98);
 }
 
@@ -1870,8 +1920,9 @@ nav{
 #projects .projects-ul .the-grid{
     margin:0;
     padding:0;
-    border:1px dashed var(--matrix-color);
+    /* border:1px dashed var(--matrix-color); */
     height: 375px;
+    display: flex;
 }
 
 #projects .projects-ul .the-second-grid{
@@ -1879,55 +1930,113 @@ nav{
     top:30px;
     margin-top:0%;
     padding:0;
-    border:1px dashed var(--matrix-color);
+    /* border:1px dashed var(--matrix-color); */
     height:375px;
 }
 
-.the-grid .project-image, .the-second-grid .second-project-image{
-    height:375px;
-    width:100%;
+.the-grid .project-image{
+    height:300px;
+    width:130%;
     overflow: hidden;
     position: relative;
+    top:10%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.the-second-grid .second-project-image{
+    height:300px;
+    width:65%;
+    overflow: hidden;
+    position: relative;
+    top:10%;
+    left:35%;
     pointer-events: none;
     z-index: 2;
 }
 
 .the-grid .project-image img, .the-second-grid .second-project-image img{
-    max-width:100%;
+    width:100%;
     height: 100%;
-    object-fit:fill;
-    object-position: center center;
 }
 
-.the-grid .project-image .overlay,  .the-second-grid .second-project-image .overlay {
+/* .the-grid .project-image .overlay{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: inherit;
+    background-color: var(--matrix-color);
     mix-blend-mode: multiply;
     opacity: 0.9;
   }
+  .the-second-grid .second-project-image .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--matrix-color);
+    mix-blend-mode: multiply;
+    opacity: 0.9; 
+  } */
 
-  .projects-ul .project-content, .projects-ul .second-project-content{
+  
+/* .project-image .overlay, .second-project-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: yellow;
+    transition: .5s ease;
+    mix-blend-mode:overlay;
+    border-radius: 5px;
+    }
+
+    .project-image:hover .overlay,.the-second-grid .second-project-image:hover .overlay{
+     display: none; 
+    background-color: black;
+    transform: translateX(-3px);
+    transition: .5s ease;
+    -webkit-transform: translateX(-3px);
+    }
+
+    .project-image img:hover, .second-project-image img:hover{
+    box-shadow:
+    1px 1px var(--matrix-color),
+    2px 2px var(--matrix-color),
+    3px 3px var(--matrix-color),
+    4px 4px var(--matrix-color),
+    5px 5px var(--matrix-color),
+    6px 6px var(--matrix-color);
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+    transition: .5s ease;
+    } */
+  .projects-ul .project-content{
     position: relative;
-    top:-350px;
     background-color: transparent;
     z-index: 4;
     width:100%;
     height:100%;
-}
-
-.projects-ul .project-content{
-    padding-right: 5%;
     text-align: right;
 }
 
 .projects-ul .second-project-content{
-    padding-left: 5%;
+    position: relative;
+    top:-300px;
+    background-color: transparent;
+    z-index: 4;
+    width:70%;
+    height:100%;
     text-align: left;
-    
+}
+
+.project-content .project-description{
+    width:150%;
+    position: relative;
+    right: 50%;
 }
 
 .second-project-content .second-project-description{
@@ -1939,13 +2048,34 @@ nav{
     text-align: left;
 }
 
+.project-content .project-tech-stack li, .second-project-content .second-project-tech-stack li{
+    font-size: 1.2rem;
+}
+
+.first-project-svg{
+    padding-right: 3%;;
+    width:13% !important;
+    height: 100% !important;
+}
+
 #contact{
     margin:0;
-    height:90vh
+    height:50vh;
+    width:77vw;
+    margin-left: -29%;
+    padding: 0;
+}
+
+#contact .contact{
+    padding: 0;
+    padding-bottom: 5%;
+    margin: 0;
+    font-size: 1.6rem;
 }
 
 #contact .contact-description{
     font-size: 2.5rem;
+    /* padding-top: 10%; */
 }
 
 #contact .contact-text{
@@ -1984,22 +2114,22 @@ nav{
 .built{
     color: rgb(3, 160, 98);
     font-size: 16px;
-    height: 5vh;
     text-align: center;
-    padding-bottom: 5%;
+    position: relative;
+    bottom:-10%
 }
 
 .coming-soon{
         background-color: #03a062;
         color: white;
-        font-size: 50px;
+        font-size: 80px;
         font-weight: bold;
         padding: 20px;
         transform: rotate(-45deg);
         position: absolute;
-        top: 340px;
-        left: 25px;
-        z-index: 2;
+        top: 270px;
+        left: -70px;
+        z-index: 4;
         white-space: NOWRAP;
         animation: tilt 2s infinite linear;
         /* transform-origin: top left; */

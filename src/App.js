@@ -51,7 +51,6 @@ console.log(screenWidth)
             <Header mobileSize={mobileSize}/>
             <Body mobileSize={mobileSize} style={style}/>
             <LeftSideBar mobileSize={mobileSize} style={iconSvg}/>
-            <p className='built'>Built by Alfred Emmanuel</p>
             <RightSideBar />
         </div>
      );

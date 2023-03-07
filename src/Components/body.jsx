@@ -261,6 +261,7 @@ function Body(props) {
                           fill="none"
                           stroke="currentColor"
                           stroke-width="2"
+                          className="first-project-svg"
                           style={props.style}
                         >
                           <title>GitHub</title>
@@ -272,9 +273,11 @@ function Body(props) {
                           xmlns="http://www.w3.org/2000/svg"
                           role="img"
                           viewBox="0 0 24 24"
+                          // width="16"
                           fill="none"
                           stroke="currentColor"
                           stroke-width="2"
+                          className="first-project-svg"
                           style={props.style}
                         >
                           <title>External Link</title>
@@ -379,6 +382,7 @@ function Body(props) {
           <a className="contact-link" href="mailto:ealfred828@gmail.com">
             Get in Touch
           </a>
+          <p className="built">Built by Alfred Emmanuel</p>
         </section>
       </main>
     </div>
