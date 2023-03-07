@@ -253,7 +253,7 @@ function Body(props) {
                       </li>
                     </ul>
                     <div style={transparentBg}>
-                      <a style={transparentBg}>
+                      <a style={transparentBg} target="_blank">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           role="img"
@@ -268,7 +268,11 @@ function Body(props) {
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
                       </a>
-                      <a style={transparentBg}>
+                      <a
+                        style={transparentBg}
+                        href="https://cbt-appi.netlify.app/"
+                        target="_blank"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           role="img"
@@ -293,7 +297,7 @@ function Body(props) {
 
               <li className="the-second-grid">
                 <div className="second-project-image">
-                  <img src="/logo.jpeg" />
+                  <img src="/snake.png" />
                   <div className="overlay"></div>
                 </div>
                 <div className="second-project-content">
@@ -301,15 +305,14 @@ function Body(props) {
                     <p className="second-feature" style={transparentBg}>
                       Featured Project
                     </p>
-                    <h3 className="second-title"> CBT App</h3>
+                    <h3 className="second-title"> Snake Game</h3>
                     <div
                       className="second-project-description"
                       style={props.mobileSize ? transparentBg : null}
                     >
                       <p className="description-text">
-                        This was created for a pharmaceutical company for an
-                        entrance exam which students in more than half the
-                        country take
+                        Created a snake game from the ground up, currently
+                        optimised for PC only (Still under development)
                       </p>
                     </div>
                     <ul
@@ -317,20 +320,24 @@ function Body(props) {
                       style={transparentBg}
                     >
                       <li style={props.mobileSize ? transparentBg : null}>
-                        React
+                        Javascript
                       </li>
                       <li style={props.mobileSize ? transparentBg : null}>
-                        JSX
+                        HTML 5
                       </li>
                       <li style={props.mobileSize ? transparentBg : null}>
-                        CSS
+                        CSS3
                       </li>
                       <li style={props.mobileSize ? transparentBg : null}>
                         HTML
                       </li>
                     </ul>
                     <div style={transparentBg}>
-                      <a style={transparentBg}>
+                      <a
+                        style={transparentBg}
+                        href="https://snake-gme.netlify.app/"
+                        target="_blank"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           role="img"
@@ -344,7 +351,11 @@ function Body(props) {
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
                       </a>
-                      <a style={transparentBg}>
+                      <a
+                        style={transparentBg}
+                        href="https://github.com/Alfred-Emmanuel/snake-game"
+                        target="_blank"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           role="img"
