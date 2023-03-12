@@ -335,7 +335,7 @@ function Body(props) {
                     <div style={transparentBg}>
                       <a
                         style={transparentBg}
-                        href="https://snake-gme.netlify.app/"
+                        href="https://github.com/Alfred-Emmanuel/snake-game"
                         target="_blank"
                       >
                         <svg
@@ -354,7 +354,7 @@ function Body(props) {
                       </a>
                       <a
                         style={transparentBg}
-                        href="https://github.com/Alfred-Emmanuel/snake-game"
+                        href="https://snake-gme.netlify.app/"
                         target="_blank"
                       >
                         <svg
